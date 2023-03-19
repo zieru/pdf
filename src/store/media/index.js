@@ -1,6 +1,7 @@
 import { action, thunk } from 'easy-peasy';
 import shortid from "shortid";
 import { PDFDocument } from "pdf-lib";
+import { notify } from '../../services/helper/utils';
 
 const mediaModel = {
     pdfFile: null,
@@ -22,6 +23,10 @@ const mediaModel = {
             actions.setUnit8Array(uint8Array);
         };
         reader.readAsArrayBuffer(file);
+        notify({
+            message: 'PDF uploaded',
+            status: true
+        });
     }),
 
     extractedPdfs: [
@@ -49,8 +54,19 @@ const mediaModel = {
     }),
 
     handleExtractedPdfs: thunk(async (actions, __, { getState }) => {
-        const pdfs = getState()['extractedPdfs'];
-        pdfs.forEach(async (pdf) => await actions.splitPdf(pdf));
+        try {
+            const pdfs = getState()['extractedPdfs'];
+            pdfs.forEach(async (pdf) => await actions.splitPdf(pdf));
+            notify({
+                message: 'PDF Extracted Successfully',
+                status: true
+            });
+        } catch (error) {
+            notify({
+                message: 'Something went wrong',
+                status: false
+            });
+        }
     }),
 
     splitPdf: thunk(async (actions, payload, { getState }) => {
