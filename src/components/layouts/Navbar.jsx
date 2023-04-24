@@ -27,8 +27,8 @@ const Navbar = () => (<div id="navbar" className="sticky">
                             </a>
                         </li>
                     </ul>
-                    <a to="/" className="btn btn-primary">
-                        Login
+                    <a href="https://github.com/saiedislamshuvo/pdf-splitter-tool-react" className="btn btn-dark">
+                        Github
                     </a>
                 </div>
             </div>

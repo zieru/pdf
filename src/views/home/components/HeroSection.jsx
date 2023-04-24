@@ -1,6 +1,6 @@
 const HeroSection = (props) => (<div className="vh-60">
     <div className="container">
-        <div className="row py-3">
+        <div className="row py-5">
             <div className="col-md-6 text-center text-md-start">
                 <h1 className="text-heading-hero">
                     On overcoming obstacles
