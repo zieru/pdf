@@ -12,7 +12,7 @@ const PdfFileHandler = () => {
             <div className="card-body">
                 <div className="form-group">
                     <p className='card-title'>Upload PDF</p>
-                    <input type="file" name="" id="pdfFile" className="form-control" onChange={handlePdfFileChange} />
+                    <input type="file" name="" accept=",.pdf" id="pdfFile" className="form-control" onChange={handlePdfFileChange} />
                 </div>
             </div>
         </div>
