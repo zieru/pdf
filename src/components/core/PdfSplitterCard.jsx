@@ -64,7 +64,7 @@ const PdfRangeFormItem = ({ formItem }) => {
             <input
                 type="text"
                 className="form-control mb-0"
-                placeholder="Enter file name"
+                placeholder="Nama File PDF"
                 name='title'
                 value={formItem.title}
                 onChange={(event) => handleExtractedPdfItemField({
@@ -75,11 +75,11 @@ const PdfRangeFormItem = ({ formItem }) => {
         </div>
         <div className="d-flex">
             <div className="form-group me-2">
-                <label className="fw-bold">Start</label>
+                <label className="fw-bold">Page Start:</label>
                 <input
                     type="number"
                     className="form-control mb-0"
-                    placeholder="Enter Start"
+                    placeholder=""
                     name='start'
                     value={formItem.start}
                     onChange={(event) => handleExtractedPdfItemField({
@@ -89,11 +89,11 @@ const PdfRangeFormItem = ({ formItem }) => {
                 />
             </div>
             <div className="form-group me-2">
-                <label className="fw-bold">End</label>
+                <label className="fw-bold">Page End</label>
                 <input
                     type="number"
                     className="form-control mb-0"
-                    placeholder="Enter End"
+                    placeholder="masukkan halaman terakhirnya"
                     name='end'
                     value={formItem.end}
                     onChange={(event) => handleExtractedPdfItemField({
