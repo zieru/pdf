@@ -25,7 +25,7 @@ const mediaModel = {
         reader.readAsArrayBuffer(file);
 
         const mainPdfDoc = await PDFDocument.load(uint8Array);
-        console.log(mainPdfDoc..getPages())
+        console.log(mainPdfDoc.getPages())
         
         notify({
             message: 'PDF uploaded',
